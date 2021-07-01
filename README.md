@@ -1,4 +1,4 @@
-# AspCoreWithIdentityAndAuthorization
+# Asp.NET Core Project (Custom IdentityUser and Authorization)
 
 Asp NET Core 5.0 Application
 
