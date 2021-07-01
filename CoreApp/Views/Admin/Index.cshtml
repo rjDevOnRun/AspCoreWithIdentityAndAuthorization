@@ -1,0 +1,33 @@
+﻿@using CoreApp.Models
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    ApplicationUser currentUser = UserManager.GetUserAsync(User).Result;
+}
+<h4 class="text-info">Site Administration</h4>
+<hr/>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+
+            <a class="btn btn-primary container-fluid" asp-controller="User"
+               asp-action="Index">Manage Users</a>
+        </div>
+
+        <div class="form-group">
+            <a class="btn btn-primary container-fluid" asp-controller="UserRoles"
+               asp-action="Manage" asp-route-userId="@currentUser.Id">Manage Roles for Users</a>
+        </div>
+
+        <div class="form-group">
+            <a class="btn btn-primary container-fluid" 
+               asp-controller="RoleManager" asp-action="Index">Manage Roles</a>
+        </div>
+    </div>
+</div>

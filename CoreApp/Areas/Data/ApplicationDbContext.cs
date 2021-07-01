@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using CoreApp.Models;
+using CoreApp.ViewModels;
 
 namespace CoreApp.Data
 {
@@ -35,5 +36,11 @@ namespace CoreApp.Data
             builder.Entity<IdentityRoleClaim<string>>(entity => entity.ToTable("RoleClaims"));
             builder.Entity<IdentityUserToken<string>>(entity => entity.ToTable("UserTokens"));
         }
+
+        /// <summary>
+        /// Override the EFF Table/schema Builder parameters
+        /// </summary>
+        /// <param name="builder"></param>
+        public DbSet<CoreApp.ViewModels.UserViewModel> UserViewModel { get; set; }
     }
 }
