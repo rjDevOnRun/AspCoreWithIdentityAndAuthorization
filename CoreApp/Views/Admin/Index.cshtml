@@ -8,6 +8,17 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 
     ApplicationUser currentUser = UserManager.GetUserAsync(User).Result;
+    var tmpData = TempData["Message"];
+}
+
+@if (tmpData != null)
+{
+    var viewMsg = TempData["Message"];
+    var statusMessageClass = viewMsg.ToString().StartsWith("Error") ? "danger" : "success";
+    <div class="alert alert-@statusMessageClass alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        @viewMsg.ToString()
+    </div>
 }
 <h4 class="text-info">Site Administration</h4>
 <hr/>
