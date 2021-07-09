@@ -70,5 +70,19 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
+    
+    
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            window.setTimeout(function () {
+                $(".alert").fadeTo(1500, 0).slideUp(500, function () {
+                    $(this).remove();
+                });
+            }, 5000);
+
+        });
+    </script>
 </body>
 </html>
