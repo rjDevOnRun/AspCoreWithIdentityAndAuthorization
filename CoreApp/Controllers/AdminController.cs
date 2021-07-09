@@ -10,6 +10,7 @@ namespace CoreApp.Controllers
     {
         public IActionResult Index()
         {
+            //TempData["Message"] = $"Successfully edited User information!";
             return View();
         }
     }
